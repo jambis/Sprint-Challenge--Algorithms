@@ -114,7 +114,7 @@ class SortingRobot:
                 if self.compare_item() <= 0:
                     self.swap_item()
                 else:
-                    # If there an item that not less than what
+                    # If there's an item that not greater than what
                     # I have we still need to have another pass of sorting
                     self.set_light_on()
 
@@ -124,6 +124,7 @@ class SortingRobot:
             while self.can_move_left():
                 self.move_left()
 
+                # Swap any card that is less than what I have or if its empty
                 if self.compare_item() is None or self.compare_item() > 0:
                     self.swap_item()
 
